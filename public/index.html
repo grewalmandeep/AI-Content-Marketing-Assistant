@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI-Powered Email Assistant — Prototype</title>
+    <style>
+      body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; padding: 24px; }
+      input, textarea, select { width: 100%; padding: 8px; margin: 6px 0; }
+      .row { display:flex; gap:12px }
+      .col { flex:1 }
+      .controls { margin-top:12px }
+      .drafts { margin-top:24px }
+      pre { background:#f7f7f8; padding:12px }
+    </style>
+  </head>
+  <body>
+    <h1>AI-Powered Email Assistant (Prototype)</h1>
+
+    <div>
+      <label>To</label>
+      <input id="to" placeholder="recipient@example.com" />
+      <label>Subject</label>
+      <input id="subject" placeholder="Subject" />
+      <label>Message / Notes</label>
+      <textarea id="body" rows="6" placeholder="Give context or notes for the assistant"></textarea>
+      <label>Tone</label>
+      <select id="tone"><option value="default">Default</option><option value="casual">Casual</option><option value="formal">Formal</option><option value="concise">Concise</option></select>
+
+      <div class="controls">
+        <button id="generate">Generate Draft</button>
+        <button id="saveDraft" disabled>Save Draft</button>
+        <button id="refreshDrafts">Refresh Drafts</button>
+      </div>
+
+      <h3>Generated</h3>
+      <div id="generated">
+        <em>No draft generated yet.</em>
+      </div>
+    </div>
+
+    <div class="drafts">
+      <h3>Saved Drafts</h3>
+      <div id="draftList"><em>Loading...</em></div>
+    </div>
+
+    <script>
+      async function api(path, opts) {
+        const res = await fetch('/api/' + path, opts && { ...opts, headers: { 'content-type':'application/json' } });
+        return res.json();
+      }
+
+      let latest = null;
+
+      document.getElementById('generate').addEventListener('click', async () => {
+        const payload = {
+          to: document.getElementById('to').value,
+          subject: document.getElementById('subject').value,
+          body: document.getElementById('body').value,
+          tone: document.getElementById('tone').value
+        };
+        document.getElementById('generated').innerHTML = '<em>Generating…</em>';
+        const r = await fetch('/api/generate', { method: 'POST', headers: { 'content-type':'application/json' }, body: JSON.stringify(payload) });
+        const data = await r.json();
+        if (!data.ok) {
+          document.getElementById('generated').innerHTML = '<pre>Error: '+(data.error||'unknown')+'</pre>';
+          return;
+        }
+        latest = data.draft;
+        document.getElementById('generated').innerHTML = `<strong>To:</strong> ${escapeHtml(latest.to)}<br/><strong>Subject:</strong> ${escapeHtml(latest.subject)}<pre>${escapeHtml(latest.body)}</pre>`;
+        document.getElementById('saveDraft').disabled = false;
+      });
+
+      document.getElementById('saveDraft').addEventListener('click', async () => {
+        if (!latest) return;
+        const name = prompt('Optional name for this draft', latest.subject || 'Draft');
+        const res = await fetch('/api/save', { method: 'POST', headers: { 'content-type':'application/json' }, body: JSON.stringify({ draft: latest, name }) });
+        const data = await res.json();
+        if (data.ok) {
+          alert('Saved');
+          loadDrafts();
+        } else alert('Save failed');
+      });
+
+      document.getElementById('refreshDrafts').addEventListener('click', loadDrafts);
+
+      function escapeHtml(s) { return (s||'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+
+      async function loadDrafts() {
+        const r = await fetch('/api/drafts');
+        const j = await r.json();
+        if (!j.ok) { document.getElementById('draftList').innerHTML = 'Error'; return; }
+        if (!j.drafts.length) { document.getElementById('draftList').innerHTML = '<em>No drafts saved yet.</em>'; return; }
+        document.getElementById('draftList').innerHTML = j.drafts.map(d => `<div style="border-bottom:1px solid #eee;padding:6px"><strong>${escapeHtml(d.name)}</strong> <small>${new Date(d.createdAt).toLocaleString()}</small><div><a href="#" data-id="${d.id}">View</a></div></div>`).join('');
+        document.querySelectorAll('#draftList a[data-id]').forEach(a => a.addEventListener('click', async e => {
+          e.preventDefault();
+          const id = e.target.dataset.id;
+          const res = await fetch('/api/drafts/' + id);
+          const j = await res.json();
+          if (j.ok) {
+            const d = j.draft;
+            alert('Draft:\n\n' + d.name + '\n\n' + d.draft.subject + '\n\n' + d.draft.body);
+          }
+        }));
+      }
+
+      loadDrafts();
+    </script>
+  </body>
+</html>

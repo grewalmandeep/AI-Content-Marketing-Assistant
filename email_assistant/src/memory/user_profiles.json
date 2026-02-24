@@ -1,0 +1,106 @@
+{
+  "users": {
+    "user_001": {
+      "name": "John Smith",
+      "email": "john@company.com",
+      "company": "TechCorp Inc.",
+      "role": "Senior Engineer",
+      "preferred_tone": "formal",
+      "preferred_phrases": [
+        "I hope this finds you well"
+      ],
+      "sign_off": "Best regards",
+      "draft_history": [
+        {
+          "timestamp": "2026-02-21T04:26:12.873088+00:00",
+          "subject_line": "Invitation to Collaborate on AI Product Development",
+          "final_email": "Subject: Invitation to Collaborate on AI Product Development\n\nDear Valued Recipient,\n\nI hope this message finds you well. I am reaching out to explore the possibility of collaborating with you on an exciting opportunity as an AI Product Owner at our company. Your extensive experience in AI technologies and product management makes you an ideal candidate for this role. We are particularly impressed by your work on [mention any relevant projects or achievements], which aligns perfectly with our vision for innovation and excellence.\n\nIf you are interested in discussing this opportunity further, please let us know a convenient time for a call or meeting.\n\nLooking forward to the possibility of working together.\n\nBest regards,\nSender\nSenior Engineer, TechCorp Inc.",
+          "recipient_name": "",
+          "recipient_company": "",
+          "detected_intent": "outreach",
+          "selected_tone": "formal"
+        },
+        {
+          "timestamp": "2026-02-21T04:26:16.113029+00:00",
+          "subject_line": "Invitation to Collaborate on AI Product Development",
+          "final_email": "Subject: Invitation to Collaborate on AI Product Development\n\nDear Valued Recipient,\n\nI hope this message finds you well. I am reaching out to explore the possibility of collaborating with you on an exciting opportunity as an AI Product Owner at our company. Your extensive experience in AI technologies and product management makes you an ideal candidate for this role. We are particularly impressed by your work on [mention any relevant projects or achievements], which aligns perfectly with our vision for innovation and excellence.\n\nIf you are interested in discussing this opportunity further, please let us know a convenient time for a call or meeting.\n\nLooking forward to the possibility of working together.\n\nBest regards,\nSender\nSenior Engineer, TechCorp Inc.",
+          "recipient_name": "",
+          "recipient_company": "",
+          "detected_intent": "outreach",
+          "selected_tone": "formal",
+          "validation_passed": true
+        },
+        {
+          "timestamp": "2026-02-21T04:31:35.604696+00:00",
+          "subject_line": "Invitation to Industry Conference - Networking Opportunity",
+          "final_email": "Subject: Invitation to Industry Conference - Networking Opportunity\n\nDear Mr. Johnson,\n\nYou are cordially invited to attend the upcoming Industry Conference, which will be held on November 10th. The event promises to provide valuable networking opportunities and insights into the latest industry trends. Further details are included in the attached brochure.\n\nYour participation would be greatly appreciated.\n\nBest regards,\nJohn Smith\nSenior Engineer, TechCorp Inc.",
+          "recipient_name": "",
+          "recipient_company": "Hospital or Non-Profit Organization",
+          "detected_intent": "outreach",
+          "selected_tone": "formal"
+        },
+        {
+          "timestamp": "2026-02-21T04:31:38.069811+00:00",
+          "subject_line": "Invitation to Industry Conference - Networking Opportunity",
+          "final_email": "Subject: Invitation to Industry Conference - Networking Opportunity\n\nDear Mr. Johnson,\n\nYou are cordially invited to attend the upcoming Industry Conference, which will be held on November 10th. The event promises to provide valuable networking opportunities and insights into the latest industry trends. Further details are included in the attached brochure.\n\nYour participation would be greatly appreciated.\n\nBest regards,\nJohn Smith\nSenior Engineer, TechCorp Inc.",
+          "recipient_name": "",
+          "recipient_company": "Hospital or Non-Profit Organization",
+          "detected_intent": "outreach",
+          "selected_tone": "formal",
+          "validation_passed": true
+        },
+        {
+          "timestamp": "2026-02-21T04:32:13.902411+00:00",
+          "subject_line": "Collaboration Opportunity: Eagle Scout Project for Community Benefit",
+          "final_email": "Subject: Collaboration Opportunity: Eagle Scout Project for Community Benefit\n\nDear Valued Recipient,\n\nI hope this message finds you well. My name is [Sender's Name], and I am a dedicated Eagle Scout candidate working on a project that aims to benefit our community significantly. I am reaching out to explore the possibility of collaborating with your esteemed organization to bring this project to fruition.\n\nThe project involves [brief description of the project], which I believe aligns with your organization's mission and values. By working together, we can create a positive impact that will benefit both your organization and the community at large.\n\nI am eager to discuss how we can collaborate effectively and would appreciate any support or guidance you can provide.\n\nPlease feel free to contact me at your earliest convenience to discuss this opportunity further. I am available for a meeting or call at your convenience.\n\nThank you for considering this collaboration. I look forward to the possibility of working together to make a meaningful difference.\n\nBest regards,\n\n[Sender's Name]\n[Contact Information]",
+          "recipient_name": "",
+          "recipient_company": "Hospital or Non-Profit Organization",
+          "detected_intent": "outreach",
+          "selected_tone": "formal"
+        },
+        {
+          "timestamp": "2026-02-21T04:32:16.434055+00:00",
+          "subject_line": "Collaboration Opportunity: Eagle Scout Project for Community Benefit",
+          "final_email": "Subject: Collaboration Opportunity: Eagle Scout Project for Community Benefit\n\nDear Valued Recipient,\n\nI hope this message finds you well. My name is [Sender's Name], and I am a dedicated Eagle Scout candidate working on a project that aims to benefit our community significantly. I am reaching out to explore the possibility of collaborating with your esteemed organization to bring this project to fruition.\n\nThe project involves [brief description of the project], which I believe aligns with your organization's mission and values. By working together, we can create a positive impact that will benefit both your organization and the community at large.\n\nI am eager to discuss how we can collaborate effectively and would appreciate any support or guidance you can provide.\n\nPlease feel free to contact me at your earliest convenience to discuss this opportunity further. I am available for a meeting or call at your convenience.\n\nThank you for considering this collaboration. I look forward to the possibility of working together to make a meaningful difference.\n\nBest regards,\n\n[Sender's Name]\n[Contact Information]",
+          "recipient_name": "",
+          "recipient_company": "Hospital or Non-Profit Organization",
+          "detected_intent": "outreach",
+          "selected_tone": "formal",
+          "validation_passed": true
+        },
+        {
+          "timestamp": "2026-02-21T04:37:28.747552+00:00",
+          "subject_line": "Exploring Future Collaborations with Eagle Scout Projects",
+          "final_email": "Subject: Exploring Future Collaborations with Eagle Scout Projects\n\nDear Valued Recipient,\n\nI hope this message finds you well. I am reaching out to introduce an exciting opportunity for collaboration between your esteemed hospital and our Eagle Scout projects. Our non-profit initiatives are designed to benefit community organizations like yours by providing valuable resources and support through various project work. We believe that partnering with us could bring significant advantages to your organization, enhancing your community outreach and service capabilities.\n\nWe would love to discuss how our projects can align with your goals and explore potential areas of collaboration. Please let us know a convenient time for a meeting or call.\n\nWarm Best regards,\nSender",
+          "recipient_name": "",
+          "recipient_company": "Hospital",
+          "detected_intent": "outreach",
+          "selected_tone": "formal"
+        },
+        {
+          "timestamp": "2026-02-21T04:37:32.059602+00:00",
+          "subject_line": "Exploring Future Collaborations with Eagle Scout Projects",
+          "final_email": "Subject: Exploring Future Collaborations with Eagle Scout Projects\n\nDear [Recipient's Name],\n\nI hope this message finds you well. I am reaching out to introduce an exciting opportunity for collaboration between your esteemed hospital and our Eagle Scout projects. Our non-profit initiatives are designed to benefit community organizations like yours by providing valuable resources and support through various projects. We believe that partnering with us could bring significant advantages to your organization, enhancing your community outreach and service capabilities.\n\nWe would love to discuss how our projects can align with your goals and explore potential areas of collaboration. Please let us know a convenient time for a meeting or call.\n\nBest regards,  \n[Your Name]",
+          "recipient_name": "",
+          "recipient_company": "Hospital",
+          "detected_intent": "outreach",
+          "selected_tone": "formal",
+          "validation_passed": true
+        }
+      ]
+    },
+    "user_002": {
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "company": "Innovate Ltd.",
+      "role": "Marketing Specialist",
+      "preferred_tone": "casual",
+      "preferred_phrases": [
+        "Just following up",
+        "Looking forward to hearing from you"
+      ],
+      "sign_off": "Cheers",
+      "draft_history": []
+    }
+  }
+}

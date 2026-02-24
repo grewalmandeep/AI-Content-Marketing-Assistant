@@ -1,0 +1,37 @@
+Subject: URGENT: Overdue Deliverable - Project Apollo
+
+Dear Alex,
+
+This email is to address the overdue deliverable for Project Apollo, specifically the Q3 budget report, which was due on Friday. I need you to provide a concrete update on its status and an estimated completion time within the next two hours.
+
+Please prioritize this and ensure its immediate submission.
+
+Regards,
+John Smith
+Senior Engineer, TechCorp Inc.
+
+---
+
+Subject: Action Required: Project Phoenix Scope Adjustment
+
+Dear Team,
+
+I am writing to set clear expectations regarding the revised scope for Project Phoenix. We need to finalize the updated scope document by end of day today. I require your confirmation that this timeline is achievable.
+
+Please come prepared to discuss and commit to the updated plan in our 2 PM meeting.
+
+Best regards,
+John Smith
+Senior Engineer, TechCorp Inc.
+
+---
+
+Subject: Immediate Action: Critical Blocker on Database Migration
+
+Dear Sarah,
+
+I am writing to inform you of a critical blocker that requires your immediate intervention. I need the correct, verified credentials from your team by 11:00 AM PST today. Please treat this as your top priority.
+
+Regards,
+John Smith
+Senior Engineer, TechCorp Inc.

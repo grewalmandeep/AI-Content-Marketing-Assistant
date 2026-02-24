@@ -1,0 +1,46 @@
+models:
+  primary:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.7
+    max_tokens: 1000
+    timeout: 30
+  fallback:
+    provider: cohere
+    model: command-r
+    temperature: 0.7
+    max_tokens: 1000
+    timeout: 30
+
+routing:
+  max_retries: 2
+  fallback_on_timeout: true
+  fallback_on_error: true
+  log_all_requests: true
+
+agents:
+  input_parser:
+    model: primary
+    temperature: 0.2
+  intent_detection:
+    model: primary
+    temperature: 0.1
+  tone_stylist:
+    model: primary
+    temperature: 0.3
+  draft_writer:
+    model: primary
+    temperature: 0.7
+  personalization:
+    model: primary
+    temperature: 0.5
+  review:
+    model: primary
+    temperature: 0.2
+  router:
+    model: primary
+    temperature: 0.1
+
+memory:
+  max_history_per_user: 10
+  persist_path: src/memory/user_profiles.json
