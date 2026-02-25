@@ -5,6 +5,27 @@ Exposes models, agents, routing, memory for use by agents and workflow.
 import os
 import yaml
 
+import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()  # still works for local development
+
+def get_secret(key, default=None):
+    """Reads from Streamlit secrets first, then falls back to environment variables."""
+    try:
+        return st.secrets[key]
+    except Exception:
+        return os.getenv(key, default)
+
+# All your keys — now work everywhere
+OPENAI_API_KEY    = get_secret("OPENAI_API_KEY")
+COHERE_API_KEY    = get_secret("COHERE_API_KEY")
+LANGSMITH_API_KEY = get_secret("LANGSMITH_API_KEY")
+LANGSMITH_TRACING = get_secret("LANGSMITH_TRACING", "false")
+LANGSMITH_PROJECT = get_secret("LANGSMITH_PROJECT", "email-assistant")
+DEFAULT_MODEL     = get_secret("DEFAULT_MODEL", "gpt-4o")
+LOG_LEVEL         = get_secret("LOG_LEVEL", "INFO")
+
 _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 # src/config -> src -> project root (email_assistant/)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(_THIS_DIR))
