@@ -1,4 +1,5 @@
-from langgraph.graph import StateGraph, END
+from langgraph.graph import StateGraph
+from langgraph.graph import END
 from langgraph.graph.state import CompiledStateGraph
 
 from ..state import EmailAgentState
