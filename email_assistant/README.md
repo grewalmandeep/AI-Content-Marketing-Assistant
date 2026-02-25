@@ -68,6 +68,8 @@ docker-compose up --build
 
 Open http://localhost:8501.
 
+Run the application: https://aicontentmarketemail.streamlit.app/
+
 ## Evaluation readiness
 
 - **Functionality:** Drafts are intent/tone-aware; Review agent enforces tone, grammar, coherence.
