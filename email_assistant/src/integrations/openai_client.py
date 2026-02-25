@@ -2,10 +2,21 @@ import os
 import json
 import logging
 import time
+import streamlit as st
 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+from openai import OpenAI
+
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except Exception:
+        return os.getenv(key)
+
+client = OpenAI(api_key=get_secret("OPENAI_API_KEY"))
 
 logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"))
 logger = logging.getLogger(__name__)
